@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.score {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.game-canvas {
+  border: 2px solid white;
+  position: relative;
+}
+
