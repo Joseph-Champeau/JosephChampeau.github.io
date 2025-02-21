@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 interface PaddleProps {
   y: number;
   side: 'left' | 'right';
 }
 
-const Paddle: React.FC<PaddleProps> = ({ y, side }) => {
+// Use forwardRef to pass the ref to the div element
+const Paddle = forwardRef<HTMLDivElement, PaddleProps>(({ y, side }, ref) => {
   const paddleStyle: React.CSSProperties = {
     position: 'absolute',
     top: `${y}px`,
@@ -15,7 +16,7 @@ const Paddle: React.FC<PaddleProps> = ({ y, side }) => {
     left: side === 'left' ? '0' : '790px',
   };
 
-  return <div style={paddleStyle}></div>;
-};
+  return <div ref={ref} style={paddleStyle}></div>;
+});
 
 export default Paddle;

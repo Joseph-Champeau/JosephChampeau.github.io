@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import Paddle from './src/Paddle';
-import Ball from './src/Ball';
+import Paddle from './Paddle';
+import Ball from './Ball';
 
 const canvasWidth = 800;
 const canvasHeight = 600;
@@ -18,7 +18,6 @@ const App: React.FC = () => {
   const [rightScore, setRightScore] = useState<number>(0);
   const leftPaddleRef = useRef<HTMLDivElement | null>(null);
   const rightPaddleRef = useRef<HTMLDivElement | null>(null);
-  const ballRef = useRef<HTMLDivElement | null>(null);
 
   const handleKeyDown = (event: KeyboardEvent) => {
     const speed = 30; // Paddle speed
