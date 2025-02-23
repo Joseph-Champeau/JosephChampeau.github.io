@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Paddle from './Paddle';
 import Ball from './Ball';
@@ -9,15 +9,13 @@ const paddleWidth = 10;
 const paddleHeight = 100;
 const ballSize = 10;
 
-const App: React.FC = () => {
+const PongGame: React.FC = () => {
   const [leftPaddleY, setLeftPaddleY] = useState<number>(canvasHeight / 2 - paddleHeight / 2);
   const [rightPaddleY, setRightPaddleY] = useState<number>(canvasHeight / 2 - paddleHeight / 2);
   const [ballPos, setBallPos] = useState<{ x: number; y: number }>({ x: canvasWidth / 2, y: canvasHeight / 2 });
   const [ballSpeed, setBallSpeed] = useState<{ dx: number; dy: number }>({ dx: 4, dy: 4 });
   const [leftScore, setLeftScore] = useState<number>(0);
   const [rightScore, setRightScore] = useState<number>(0);
-  const leftPaddleRef = useRef<HTMLDivElement | null>(null);
-  const rightPaddleRef = useRef<HTMLDivElement | null>(null);
 
   const handleKeyDown = (event: KeyboardEvent) => {
     const speed = 30; // Paddle speed
@@ -105,12 +103,12 @@ const App: React.FC = () => {
         <span>{leftScore}</span> - <span>{rightScore}</span>
       </div>
       <div className="game-canvas" style={{ position: 'relative', width: canvasWidth, height: canvasHeight }}>
-        <Paddle ref={leftPaddleRef} y={leftPaddleY} side="left" />
-        <Paddle ref={rightPaddleRef} y={rightPaddleY} side="right" />
+        <Paddle y={leftPaddleY} side="left" />
+        <Paddle y={rightPaddleY} side="right" />
         <Ball x={ballPos.x} y={ballPos.y} size={ballSize} />
       </div>
     </div>
   );
 };
 
-export default App;
+export default PongGame;

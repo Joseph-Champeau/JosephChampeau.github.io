@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .portfolio-container {
+    scroll-behavior: smooth;
+  }
+  
+  .section {
+    padding: 100px;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  #projects {
+    background-color: lightgray;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
